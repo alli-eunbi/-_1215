@@ -1,0 +1,32 @@
+def main():
+    
+    #x, y 길이 / 당근 갯수를 입력 받는다.
+    farm_input = input()
+    input_list = []
+    input_list = farm_input.split(" ")
+    input_list = list(map(int, input_list))
+    farm_size = input_list[:2]
+    carrot_num = input_list[2]
+    
+    #당근의 위치를 받고 x좌표와 y좌표로 나눈다.
+    carrot_xplace = []
+    carrot_yplace = []
+    for i in range(carrot_num):
+        carrot_input = [int(x) for x in input().split()]
+        carrot_xplace.append(carrot_input[0])
+        carrot_yplace.append(carrot_input[1])
+
+        
+    #x의 최솟값과 최댓값의 합이 제일 큰 값을 구한다.
+    carrot_X = max(carrot_xplace) - min(carrot_xplace)
+    
+    #y의 최솟값과 최댓값의 차이를 구한다.
+    carrot_Y = max(carrot_yplace) - min(carrot_yplace)
+        
+    
+    #차이에서 2씩 더해서 곱한다.
+    print((carrot_X+2)*2  + (carrot_Y+2)*2)
+    
+
+if __name__=="__main__":
+    main()
